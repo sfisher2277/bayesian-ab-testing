@@ -26,10 +26,12 @@ Outcome variable: whether the user converted (`converted`: True/False).
 - **Ad group conversion rate: 2.55%** (95% CI: 2.51%–2.60%) vs. **PSA group: 1.79%** (95% CI: 1.62%–1.95%)
 - Two-proportion z-test: z = 7.37, **p < 0.0001**
 - Bayesian posterior: **P(ad conversion rate > psa conversion rate) = 1.0000**
-- With a flat prior and this much data, frequentist and Bayesian intervals converge almost exactly — the choice of framework doesn't change the practical conclusion at full sample size.
-- **The real difference shows up under sequential monitoring**: the frequentist p-value fluctuated substantially at small sample sizes (crossing above and below the 0.05 threshold multiple times) before stabilizing, while the Bayesian posterior probability stabilized earlier and more smoothly.
+- With a flat prior and this much data, frequentist and Bayesian intervals converge almost exactly:
 
 ![Frequentist vs Bayesian intervals comparison](notebooks/images/ci_comparison.png)
+
+- **The real difference shows up under sequential monitoring**: the frequentist p-value fluctuated substantially at small sample sizes, while the Bayesian posterior probability stabilized earlier and more smoothly:
+
 ![Sequential peeking simulation: p-value vs Bayesian posterior](notebooks/images/peeking_simulation.png)
 
 ## What This Means in Practice
@@ -41,10 +43,13 @@ Frequentist and Bayesian methods largely agree when analyzing a large, complete 
 Python, pandas, numpy, scipy, matplotlib, statsmodels
 
 ## Repo Structure
-├── data/ # raw dataset (see link above to download)
-├── notebooks/ # analysis notebook(s)
-├── src/ # reusable functions (if/when refactored)
+
+```
+├── data/           # raw dataset (see link above to download)
+├── notebooks/       # analysis notebook(s)
+├── src/              # reusable functions (if/when refactored)
 ├── requirements.txt
+```
 
 ## Next Steps
 
