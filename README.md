@@ -30,7 +30,7 @@ Outcome variable: whether the user converted (`converted`: True/False).
 
 ![Frequentist vs Bayesian intervals comparison](notebooks/images/ci_comparison.png)
 
-- **The real difference shows up under sequential monitoring**: the frequentist p-value fluctuated substantially at small sample sizes, while the Bayesian posterior probability stabilized earlier and more smoothly:
+- **The real difference shows up under sequential monitoring**: the frequentist p-value fluctuated substantially at small sample sizes, repeatedly crossing the 0.05 threshold before stabilizing — a known risk of "peeking" at frequentist results before a planned sample size is reached. The Bayesian posterior probability was similarly noisy early on, but remains statistically valid to interpret at any point in data collection, without the same formal penalty for checking results early or often.
 
 ![Sequential peeking simulation: p-value vs Bayesian posterior](notebooks/images/peeking_simulation.png)
 
