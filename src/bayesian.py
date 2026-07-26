@@ -29,5 +29,5 @@ def prob_a_greater_than_b(alpha_a, beta_a, alpha_b, beta_b, n_samples=100000, se
     """Estimate P(rate_a > rate_b) via Monte Carlo sampling from each posterior."""
     rng = np.random.default_rng(seed)
     samples_a = stats.beta.rvs(alpha_a, beta_a, size=n_samples, random_state=rng)
-    samples_b = stats.beta.rvs(alpha_b, bets_b, size=n_samples, random_state=rng)
+    samples_b = stats.beta.rvs(alpha_b, beta_b, size=n_samples, random_state=rng)
     return (samples_a > samples_b).mean()
