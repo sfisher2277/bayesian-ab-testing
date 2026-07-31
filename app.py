@@ -49,3 +49,19 @@ with col2:
     st.subheader("Variant B")
     conv_b = st.number_input("Conversions (B)", min_value=0, value=150, step=1)
     n_b = st.number_input("Total visitors (B)", min_value=1, value=2000, step=1)
+
+
+if st.button("Run analysis", type="primary"):
+
+    freq = frequentist_two_proportion_test(conv_a, n_a, conv_b, n_b)
+
+    st.header("Frequentist: Two-proportion Z-Test")
+    fcol1, fcol2, fcol3 = st.co;umns(3)
+    fcol1.metric("Rate A", f"{freq['rate_a']:.2%}")
+    fcol2.metric("Rate B", f"{freq['rate_b']:.2%}")
+    fcol3.metric("p-value", f"{freq['p_value']:.4f}")
+
+    if freq["p_value"] < 0.05:
+        st.success("Statistically significant difference at α = 0.05.")
+    else:
+        st.info("No statistically significant difference at α = 0.05.")
