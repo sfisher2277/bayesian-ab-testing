@@ -13,6 +13,7 @@ Try the interactive calculator: **[Bayesian vs. Frequentist A/B Test Calculator]
 Enter conversion data for two variants and instantly compare a frequentist 
 two-proportion z-test against a Bayesian Beta-Binomial posterior analysis, 
 including a live visualization of both posterior distributions.
+![App demo — Bayesian posterior output](notebooks/images/app-demo-screenshot.png)
 
 ## Dataset
 
