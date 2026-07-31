@@ -76,7 +76,7 @@ if st.button("Run analysis", type="primary"):
     ax.hist(bayes["post_a"], bins=100, alpha=0.6, label="Variant A", density=True)
     ax.hist(bayes["post_b"], bins=100, alpha=0.6, label="Variant B", density=True)
     ax.set_xlabel("Conversion Rate")
-    ax.set_yleabel("Posterior Density")
+    ax.set_ylabel("Posterior Density")
     ax.set_title("Posterior Distributions")
     ax.legend()
     st.pyplot(fig)
