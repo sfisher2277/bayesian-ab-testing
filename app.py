@@ -65,3 +65,25 @@ if st.button("Run analysis", type="primary"):
         st.success("Statistically significant difference at α = 0.05.")
     else:
         st.info("No statistically significant difference at α = 0.05.")
+
+
+bayes = bayesian_beta_binomial(conv_a, n_a, conv_b, n_b)
+
+st.header("bayesian: Beta-Binomial Posterior")
+st.metric("P(B > A)", f"{bayes['prob_b_better']:.2%}")
+
+fig, ax = plt.subplots(figsize=(7, 4))
+ax.hist(bayes["post_a"], bins=100, alpha=0.6, label="Variant A", density=True)
+ax.hist(bayes["post_b"], bins=100, alpha=0.6, label="Variant B", density=True)
+ax.set_xlabel("Conversion Rate")
+ax.set_yleabel("Posterior Density")
+ax.set_title("Posterior Distributions")
+ax.legend()
+st.pyplot(fig)
+
+st.caption(
+    "Note: the Bayesian posterior gives the probability that B truly "
+        "beats A given the data and prior, while the frequentist p-value "
+        "answers a different question — the probability of seeing data "
+        "this extreme if there were no true difference."
+)
