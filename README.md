@@ -6,6 +6,14 @@ A comparison of frequentist and Bayesian approaches to A/B test analysis, using 
 
 As a workforce management forecast analyst, I regularly rely on statistical comparisons to evaluate whether operational changes are actually working. This project was a chance to go deeper into the two major statistical frameworks used for that kind of decision-making — frequentist and Bayesian — and understand not just how to run each test, but when and why they lead to different conclusions.
 
+## 🚀 Live Demo
+
+Try the interactive calculator: **[Bayesian vs. Frequentist A/B Test Calculator](https://bayesian-ab-testing-yprjf8jfxdczvqrdzxul7n.streamlit.app)**
+
+Enter conversion data for two variants and instantly compare a frequentist 
+two-proportion z-test against a Bayesian Beta-Binomial posterior analysis, 
+including a live visualization of both posterior distributions.
+
 ## Dataset
 
 [Marketing A/B Testing](https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing) (Kaggle) — 588,101 users split into two groups:
@@ -40,14 +48,15 @@ Frequentist and Bayesian methods largely agree when analyzing a large, complete 
 
 ## Tools
 
-Python, pandas, numpy, scipy, matplotlib, statsmodels
+Python, pandas, numpy, scipy, matplotlib, statsmodels, streamlit
 
 ## Repo Structure
 
 ```
 ├── data/           # raw dataset (see link above to download)
-├── notebooks/       # analysis notebook(s)
-├── src/              # reusable functions (if/when refactored)
+├── notebooks/      # analysis notebook(s)
+├── src/            # reusable functions (if/when refactored)
+├── app.py          # live Streamlit demo
 ├── requirements.txt
 ```
 
