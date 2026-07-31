@@ -3,7 +3,7 @@ import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="A/B Test Calculator", layout="centered")
+st.set_page_config(page_title="A/B Test Calculator", page_icon="📊", layout="centered")
 st.title("Bayesian vs. Frequentist A/B Test Calculator")
 
 def frequentist_two_proportion_test(conv_a, n_a, conv_b, n_b):
