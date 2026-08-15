@@ -38,7 +38,7 @@ jobs:
           driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
           
           # REPLACE WITH YOUR ACTUAL STREAMLIT URL
-          url = 'https://streamlit.app'
+          url = 'https://bayesian-ab-testing-yprjf8jfxdczvqrdzxul7n.streamlit.app/'
           
           print(f'Visiting {url}...')
           driver.get(url)
