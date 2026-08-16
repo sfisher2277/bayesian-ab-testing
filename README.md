@@ -56,7 +56,7 @@ Python, pandas, numpy, scipy, matplotlib, statsmodels, streamlit
 ```
 ├── data/           # raw dataset (see link above to download)
 ├── notebooks/      # analysis notebook(s)
-├── src/            # reusable functions (if/when refactored)
+├── src/            # reusable functions (frequentist.py, bayesian.py, simulation.py)
 ├── app.py          # live Streamlit demo
 ├── requirements.txt
 ```
