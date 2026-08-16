@@ -1,14 +1,14 @@
 # Bayesian vs. Frequentist A/B Testing
 
-A comparison of frequentist and Bayesian approaches to A/B test analysis, using a real-world marketing dataset — including a live, interactive calculator and a simulation of sequential monitoring ("peeking") to show where the two methods practically diverge.
+A comparison of frequentist and Bayesian approaches to A/B test analysis, using a real-world marketing dataset, including a live, interactive calculator and a simulation of sequential monitoring ("peeking") to show where the two methods practically diverge.
 
 **[Try the live app →](https://bayesian-ab-testing-yprjf8jfxdczvqrdzxul7n.streamlit.app)**
 
 ## Motivation
 
-Statistical framework choice isn't just academic — frequentist and Bayesian methods can lead to different practical conclusions, especially with small samples or continuous monitoring, both common realities in production experimentation. This project was a chance to move past "run a t-test and check p < 0.05" and actually understand *when* and *why* each framework's assumptions hold up (or don't).
+Statistical framework choice isn't just academic. Frequentist and Bayesian methods can lead to different practical conclusions, especially with small samples or continuous monitoring, both common realities in production experimentation. This project was a chance to move past "run a t-test and check p < 0.05" and actually understand *when* and *why* each framework's assumptions hold up (or don't).
 
-I work in workforce forecasting, where similar tradeoffs — small samples, decisions made before "enough" data has accumulated — come up constantly. That context is part of what drew me to this comparison, but the goal here was to build a rigorous, general-purpose analysis, not a workforce-specific tool.
+I work in workforce forecasting, where similar tradeoffs (small samples, decisions made before "enough" data has accumulated) come up constantly. That context is part of what drew me to this comparison, but the goal here was to build a rigorous, general-purpose analysis, not a workforce-specific tool.
 
 ## 🚀 Live Demo
 
@@ -45,13 +45,13 @@ Outcome variable: whether the user converted (`converted`: True/False).
 
 ![Frequentist vs Bayesian intervals comparison](notebooks/images/ci_comparison.png)
 
-- **The real difference shows up under sequential monitoring**: the frequentist p-value fluctuated substantially at small sample sizes, repeatedly crossing the 0.05 threshold before stabilizing — a known risk of "peeking" at frequentist results before a planned sample size is reached. The Bayesian posterior probability was similarly noisy early on, but remains statistically valid to interpret at any point in data collection, without the same formal penalty for checking results early or often.
+- **The real difference shows up under sequential monitoring**: the frequentist p-value fluctuated substantially at small sample sizes, repeatedly crossing the 0.05 threshold before stabilizing, a known risk of "peeking" at frequentist results before a planned sample size is reached. The Bayesian posterior probability was similarly noisy early on, but remains statistically valid to interpret at any point in data collection, without the same formal penalty for checking results early or often.
 
 ![Sequential peeking simulation: p-value vs Bayesian posterior](notebooks/images/peeking_simulation.png)
 
 ## What This Means in Practice
 
-With a large, complete sample analyzed once, frequentist and Bayesian methods converge — the choice of framework doesn't change the practical conclusion. The divergence shows up under continuous monitoring: frequentist p-values aren't formally valid under repeated testing without correction (e.g., alpha-spending), while Bayesian posteriors remain interpretable at any point in data collection. In practice, this makes Bayesian methods a more natural fit for dashboards and experiments that get checked in real time, rather than analyzed once at a predetermined endpoint.
+With a large, complete sample analyzed once, frequentist and Bayesian methods converge and the choice of framework doesn't change the practical conclusion. The divergence shows up under continuous monitoring: frequentist p-values aren't formally valid under repeated testing without correction (e.g., alpha-spending), while Bayesian posteriors remain interpretable at any point in data collection. In practice, this makes Bayesian methods a more natural fit for dashboards and experiments that get checked in real time, rather than analyzed once at a predetermined endpoint.
 
 ## Tools
 
