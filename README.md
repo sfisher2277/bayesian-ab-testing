@@ -6,7 +6,9 @@ A comparison of frequentist and Bayesian approaches to A/B test analysis, using 
 
 ## Motivation
 
-As a workforce management forecast analyst, I regularly rely on statistical comparisons to evaluate whether operational changes are actually working. This project was a chance to go deeper into the two major statistical frameworks used for that kind of decision-making — frequentist and Bayesian — and understand not just how to run each test, but when and why they lead to different conclusions.
+Statistical framework choice isn't just academic — frequentist and Bayesian methods can lead to different practical conclusions, especially with small samples or continuous monitoring, both common realities in production experimentation. This project was a chance to move past "run a t-test and check p < 0.05" and actually understand *when* and *why* each framework's assumptions hold up (or don't).
+
+I work in workforce forecasting, where similar tradeoffs — small samples, decisions made before "enough" data has accumulated — come up constantly. That context is part of what drew me to this comparison, but the goal here was to build a rigorous, general-purpose analysis, not a workforce-specific tool.
 
 ## 🚀 Live Demo
 
@@ -49,7 +51,7 @@ Outcome variable: whether the user converted (`converted`: True/False).
 
 ## What This Means in Practice
 
-Frequentist and Bayesian methods largely agree when analyzing a large, complete dataset once. They diverge in usefulness when an experiment is being monitored continuously — a common real-world scenario — since frequentist p-values aren't formally valid under repeated peeking without correction, while Bayesian posteriors remain interpretable at any point in data collection.
+With a large, complete sample analyzed once, frequentist and Bayesian methods converge — the choice of framework doesn't change the practical conclusion. The divergence shows up under continuous monitoring: frequentist p-values aren't formally valid under repeated testing without correction (e.g., alpha-spending), while Bayesian posteriors remain interpretable at any point in data collection. In practice, this makes Bayesian methods a more natural fit for dashboards and experiments that get checked in real time, rather than analyzed once at a predetermined endpoint.
 
 ## Tools
 
