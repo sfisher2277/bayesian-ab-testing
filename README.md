@@ -1,6 +1,8 @@
 # Bayesian vs. Frequentist A/B Testing
 
-A comparison of frequentist and Bayesian approaches to A/B test analysis, using a real-world marketing dataset. Includes a simulation of sequential monitoring ("peeking") to show where the two methods practically diverge.
+A comparison of frequentist and Bayesian approaches to A/B test analysis, using a real-world marketing dataset — including a live, interactive calculator and a simulation of sequential monitoring ("peeking") to show where the two methods practically diverge.
+
+**[Try the live app →](https://bayesian-ab-testing-yprjf8jfxdczvqrdzxul7n.streamlit.app)**
 
 ## Motivation
 
@@ -14,6 +16,8 @@ Enter conversion data for two variants and instantly compare a frequentist
 two-proportion z-test against a Bayesian Beta-Binomial posterior analysis, 
 including a live visualization of both posterior distributions.
 ![App demo — Bayesian posterior output](notebooks/images/app-demo-screenshot.png)
+
+*A scheduled GitHub Actions workflow pings the app every 6 hours to prevent it from spinning down due to inactivity (a normal behavior for free-tier Streamlit hosting).*
 
 ## Dataset
 
